@@ -1,15 +1,10 @@
 version: "3.9"
 services:
   ros-net:
-    # image: p84514faf325/cratergrader:cg-338-v1.0.0
     image: ros:galactic
-    ports:
-    #   - 8080:8080
-      - 5901:5900 # <external port>:<container port>
-      # - 9090:9090 # Websocket for health monitoring via rosbridge_suite
     tty: true # use terminal, i.e. the `-t` flag
     stdin_open: true # allow terminal input, i.e. the `-i` flag
 networks:
   default:
-    name: "test-net"
+    name: "my-overlay-net"
     external: true
